@@ -7,3 +7,24 @@
 //Добавьте к форме поле ввода почты. Карточки должны включать отображение фотографии.
 
 //Добавьте к форме поле ввода прогресса. Выведите прогресс в карточку.
+const formElem = document.querySelector(".workers_form");
+let workesrArr = [];
+
+formElem.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const { firstname, lastname, age } = event.target; //вместо this (потому что в стрелочной функции this не используют и также ее  стрелочную ф-ю не вызывают вне  самой стрелочной функции!)
+  workesrArr.push({
+    firstname: firstname.value,
+    lastname: lastname.value,
+    age: age.value,
+  });
+  firstname.value = "";
+  lastname.value = "";
+  age.value = "";
+
+  console.log(workesrArr);
+});
+
+
+
+
