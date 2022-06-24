@@ -11,40 +11,71 @@ const formElem = document.querySelector(".workers_form");
 let workesrArr = [];
 
 const cardsRender = () => {
-  
-  const cardsContainer = document.querySelector('.cards_container');
+  const cardsContainer = document.querySelector(".cards_container");
   cardsContainer.innerText = "";
-  workesrArr.forEach(({firstname, lastname, age}) => {
-    const container = document.createElement('div');
-    const firstnameElem = document.createElement("p");
-    const lastnameElem = document.createElement("p");
-    const ageElem = document.createElement("p");
+  workesrArr.forEach(
+    ({ firstname, lastname, avatar, age, email, salary, progress }) => {
+      const container = document.createElement("div");
+      const firstnameElem = document.createElement("p");
+      const lastnameElem = document.createElement("p");
+      const ageElem = document.createElement("p");
+      const avatarElem = document.createElement("img");
+      const emailElem = document.createElement("a");
+      const salaryElem = document.createElement("p");
+      const progressContainer = document.createElement("div");
+      const progressLine = document.createElement("div");
+      const progressValue = document.createElement("p");
 
-    firstnameElem.innerText = `First name: ${firstname}`;
-    lastnameElem.innerText = `Last name: ${lastname}`;
-    ageElem.innerText = `Age: ${age}`;
+      firstnameElem.innerText = `First name: ${firstname}`;
+      lastnameElem.innerText = `Last name: ${lastname}`;
+      ageElem.innerText = `Age: ${age}`;
+      avatarElem.setAttribute("src", avatar);
+      emailElem.innerText = email;
+      emailElem.setAttribute('href', `mailto:${email}`);
+      salaryElem.innerText = `Salary: ${rate * days}`;
+      progressValue.innerText = progress + "%";
 
-    container.append(firstnameElem, lastnameElem, ageElem);
-    cardsContainer.append(container);
-  })
-}
+      container.classList.add("container");
+      progressContainer.classList.add("progress-container");
+      progressLine.classList.add("progress-line");
+      progressLine.style.width = progress + "%";
+      progressValue.classList.add("progress-value");
+
+
+      progressContainer.append(progressLine, progressValue);
+
+      container.append(
+        firstnameElem,
+        lastnameElem,
+        ageElem,
+        avatarElem,
+        emailElem,
+        salaryElem,
+        progressContainer
+      );
+      cardsContainer.append(container);
+    }
+  );
+};
 
 formElem.addEventListener("submit", (event) => {
   event.preventDefault();
-  const { firstname, lastname, age } = event.target; //вместо this (потому что в стрелочной функции this не используют и также ее  стрелочную ф-ю не вызывают вне  самой стрелочной функции!)
+  const { firstname, lastname, age, email, avatar, salary, progress } = event.target; //вместо this (потому что в стрелочной функции this не используют и также ее  стрелочную ф-ю не вызывают вне  самой стрелочной функции!)
   workesrArr.push({
     firstname: firstname.value,
     lastname: lastname.value,
     age: age.value,
+    avatar: avatar.value,
+    email: email.value,
+    salary: salary.value,
+    progress: progress.value,
   });
   firstname.value = "";
   lastname.value = "";
   age.value = "";
+  avatar.value = '';
+  salary.value = '';
+  progress.value = '';
 
-  console.log(workesrArr);
   cardsRender();
 });
-
-
-
-
