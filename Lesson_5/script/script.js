@@ -10,6 +10,25 @@
 const formElem = document.querySelector(".workers_form");
 let workesrArr = [];
 
+const cardsRender = () => {
+  
+  const cardsContainer = document.querySelector('.cards_container');
+  cardsContainer.innerText = "";
+  workesrArr.forEach(({firstname, lastname, age}) => {
+    const container = document.createElement('div');
+    const firstnameElem = document.createElement("p");
+    const lastnameElem = document.createElement("p");
+    const ageElem = document.createElement("p");
+
+    firstnameElem.innerText = `First name: ${firstname}`;
+    lastnameElem.innerText = `Last name: ${lastname}`;
+    ageElem.innerText = `Age: ${age}`;
+
+    container.append(firstnameElem, lastnameElem, ageElem);
+    cardsContainer.append(container);
+  })
+}
+
 formElem.addEventListener("submit", (event) => {
   event.preventDefault();
   const { firstname, lastname, age } = event.target; //вместо this (потому что в стрелочной функции this не используют и также ее  стрелочную ф-ю не вызывают вне  самой стрелочной функции!)
@@ -23,6 +42,7 @@ formElem.addEventListener("submit", (event) => {
   age.value = "";
 
   console.log(workesrArr);
+  cardsRender();
 });
 
 
