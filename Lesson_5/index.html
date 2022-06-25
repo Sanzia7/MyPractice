@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Works 24.06.2022</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Works 24.06.2022</title>
-  <link rel="stylesheet" href="style/style.css" />
-</head>
+  <body>
+    <form class="workers_form">
+      <label>
+        <p>First Name:</p>
+        <input type="text" name="firstname" placeholder="Indicate the name" />
+      </label>
+      <label>
+        <p>Last Name:</p>
+        <input type="text" name="lastname" placeholder="Indicate the surname" />
+      </label>
+      <label>
+        <p>Age:</p>
+        <input type="text" name="age" placeholder="Indicate age" />
+      </label>
+      <label>
+        <p>Email:</p>
+        <input type="text" name="email" placeholder="Enter the email" />
+      </label>
+      <label>
+        <p>Avatar:</p>
+        <input
+          type="text"
+          name="avatar"
+          placeholder="Add a link to the photo"
+        />
+      </label>
+      <label>
+        <p>Rate:</p>
+        <input type="text" name="rate" placeholder="working rate" />
+      </label>
+      <label>
+        <p>Days:</p>
+        <input type="text" name="days" placeholder="number of working days" />
+      </label>
+      <label>
+        <p>Salary:</p>
+        <input type="text" name="salary" placeholder="Euro" />
+      </label>
+      <label>
+        <p>Progress:</p>
+        <input
+          type="text"
+          name="progress"
+          placeholder="Indicate progress in %"
+        />
+      </label>
 
-<body>
-  <form class="workers_form">
-    <label>
-      <p>First Name</p>
-      <input type="text" name="firstname" placeholder="Indicate the name" />
-    </label>
-    <label>
-      <p>Last Name</p>
-      <input type="text" name="lastname" placeholder="Indicate the surname" />
-    </label>
-    <label>
-      <p>Avatar</p>
-      <input type="text" name="avatar" placeholder="Add a link to the photo" />
-    </label>
-    <label>
-      <p>Age</p>
-      <input type="text" name="age" placeholder="Indicate age" />
-    </label>
-    <label>
-      <p>Email:</p>
-      <input type="text" name="email" placeholder="Enter the email" />
-    </label>
-    <label>
-      <p class="salary">Salary:</p>
-      <input type="text" name="rate" placeholder="Indicate the rate" />
-      <input type="text" name="days" placeholder="Indicate the number of working days" />
-    </label>
-    <label>
-      <p>Progress:</p>
-      <input type="text" name="progress" placeholder="Indicate progress in %" />
-    </label>
+      <button>Submit</button>
+    </form>
 
-    <button>Submit</button>
-  </form>
-  
-  <div class="cards_container"></div>
+    <div class="cards_container"></div>
 
-  <script src="script/script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
