@@ -11,8 +11,8 @@ form {
   margin: 15px;
   display: flex;
   flex-direction: column;
-  gap: 17px; 
-  background-color:rgb(224, 204, 177);
+  gap: 17px;
+  background-color: rgb(224, 204, 177);
   border: 1px solid rgb(189, 174, 138);
   border-radius: 7px;
   color: rgb(105, 21, 209);
@@ -43,6 +43,7 @@ button {
   font-size: 17px;
   border-radius: 5px;
   box-shadow: 3px 3px 3px;
+  cursor: pointer;
 }
 
 .container {
